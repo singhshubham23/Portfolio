@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 50px;
-  padding: 0px 16px;
+  padding: 0 16px;
   position: relative;
   z-index: 1;
   align-items: center;
@@ -102,6 +102,7 @@ const CardContainer = styled.div`
 `;
 
 const Projects = () => {
+  // default shows all
   const [toggle, setToggle] = useState("all");
 
   return (
@@ -109,8 +110,8 @@ const Projects = () => {
       <Wrapper>
         <Title>Projects</Title>
         <Desc style={{ marginBottom: "40px" }}>
-          I have worked on a wide range of projects. From web apps to android
-          apps. Here are some of my projects.
+          A showcase of my personal and academic projects, built with
+          technologies like React, Node, and Python.
         </Desc>
 
         <ToggleButtonGroup>
@@ -129,32 +130,23 @@ const Projects = () => {
           </ToggleButton>
           <Divider />
           <ToggleButton
-            $active={toggle === "android app"}
-            onClick={() => setToggle("android app")}
+            $active={toggle === "desktop app"}
+            onClick={() => setToggle("desktop app")}
           >
-            ANDROID APP&apos;S
-          </ToggleButton>
-          <Divider />
-          <ToggleButton
-            $active={toggle === "machine learning"}
-            onClick={() => setToggle("machine learning")}
-          >
-            MACHINE LEARNING
+            DESKTOP APP&apos;S
           </ToggleButton>
         </ToggleButtonGroup>
 
         <CardContainer>
-          {toggle === "all" &&
-            projects.map((project, index) => (
-              <ProjectCard key={`all-${index}`} project={project} />
-            ))}
-
-          {toggle !== "all" &&
-            projects
-              .filter((item) => item.category === toggle)
-              .map((project, index) => (
-                <ProjectCard key={`${toggle}-${index}`} project={project} />
-              ))}
+          {toggle === "all"
+            ? projects.map((project, index) => (
+                <ProjectCard key={`all-${index}`} project={project} />
+              ))
+            : projects
+                .filter((item) => item.category === toggle)
+                .map((project, index) => (
+                  <ProjectCard key={`${toggle}-${index}`} project={project} />
+                ))}
         </CardContainer>
       </Wrapper>
     </Container>
