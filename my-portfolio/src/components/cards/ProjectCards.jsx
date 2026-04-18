@@ -96,17 +96,25 @@ const Avatar = styled.img`
   border: 3px solid ${({ theme }) => theme.card};
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+`;
+
 const Button = styled.a`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
   font-weight: 600;
   text-align: center;
+  flex: 1;
 `;
 
 const ProjectCard = ({ project }) => {
   return (
     <Card>
-      <Image src={project.image} alt={project.title} />
+      {project.image && <Image src={project.image} alt={project.title} />}
       <Tags></Tags>
       <Details>
         <Title>{project.title}</Title>
@@ -118,9 +126,18 @@ const ProjectCard = ({ project }) => {
           <Avatar key={member.id || index} src={member.img} alt="member" />
         ))}
       </Members>
-      <Button href={project.github} target="_blank" rel="noopener noreferrer">
-        View Code
-      </Button>
+      <ButtonGroup>
+        {project.github && (
+          <Button href={project.github} target="_blank" rel="noopener noreferrer">
+            View Code
+          </Button>
+        )}
+        {project.webapp && (
+          <Button href={project.webapp} target="_blank" rel="noopener noreferrer">
+            Live App
+          </Button>
+        )}
+      </ButtonGroup>
     </Card>
   );
 };

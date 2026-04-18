@@ -14,7 +14,8 @@ const Body = styled.div`
 background-color: ${({ theme }) => theme.bg};
 color: ${({ theme }) => theme.text_primary};
 width: 100%;
-height: 90vh;
+height: auto;
+min-height: 100vh;
 overflow-x: hidden;
 position: relative;
 `;

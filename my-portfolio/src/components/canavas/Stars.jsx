@@ -6,9 +6,11 @@ import styled from "styled-components";
 
 const StyledCanvasWrapper = styled.div`
   width: 100%;
-  height: auto;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   inset: 0;
+  z-index: -1;
+  pointer-events: none;
 `;
 
 const Stars = (props) => {
