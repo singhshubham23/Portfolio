@@ -11,7 +11,6 @@ import {
   headTextAnimation,
 } from "../../src/utils/motion";
 
-import StarCanvas from "./canavas/Stars"
 
 
 const HeroContainer = styled.div`
