@@ -195,7 +195,7 @@ export const projects = [
     tags: ["React", "Node.js", "Firebase", "Tailwind CSS", "NVIDIA OCR"],
     category: "web app",
     github: "https://github.com/singhshubham23/document-verification-nvidia-ocr",
-    webapp: "https://vercel.com/shubhams-projects-48c8c894/document-verification-nvidia-ocr/2aprcaMDWwEz6XaEcLUcGeB6QJ15",
+    webapp: "https://document-verification-nvidia-ocr.vercel.app/",
   },
   {
     id: 2,
@@ -207,8 +207,7 @@ export const projects = [
     tags: ["React", "JavaScript", "CSS", "Frontend Architecture"],
     category: "web app",
     github: "https://github.com/singhshubham23/bloodbankfrontend",
-    webapp:
-      "https://vercel.com/shubhams-projects-48c8c894?repo=https://github.com/singhshubham23/bloodbankfrontend",
+    webapp: "https://bloodbank-flame.vercel.app/",
   },
   {
     id: 3,
